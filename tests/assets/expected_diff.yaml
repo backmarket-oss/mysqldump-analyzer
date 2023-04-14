@@ -1,0 +1,31 @@
+table_a:
+  foreign_keys:
+    table_a_ibfk_1:
+      db1: foreign key `table_a_ibfk_1` reference to `table_b`.`column_b1`
+      db2: foreign key `table_a_ibfk_1` reference to `table_b`.`column_b1`
+      db3: missing
+  indexes:
+    idx_column_a2:
+      db1: index `idx_column_a2` on (`column_a2`)
+      db2: missing
+      db3: missing
+table_b:
+  columns:
+    column_b3:
+      db1: column `column_b3` int(11) not null
+      db2: column `column_b3` int(11) default null
+    column_b4:
+      db1: missing
+      db2: column `column_b4` int(11) not null
+  foreign_keys:
+    table_b_ibfk_1:
+      db1: foreign key `table_b_ibfk_1` reference to `table_a`.`column_a1`
+      db2: missing
+  indexes:
+    column_b2:
+      db1: index `column_b2` on (`column_b2`)
+      db2: missing
+  summary:
+    db1: table `table_b` with 3 columns
+    db2: table `table_b` with 4 columns
+    db3: missing
